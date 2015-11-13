@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 
 namespace ConsoleAppPi
@@ -13,7 +12,7 @@ namespace ConsoleAppPi
         public static string DownloadedFileName { get; set; }
 
         private const string YOUTUBE = "youtube-dl";
-        private const string YOUTUBE_EXE = @"C:\Users\Bojan\Source\youtube\youtube-dl.exe";
+        
         static void Main(string[] args)
         {
             RunProcess(args[0]);
@@ -22,7 +21,7 @@ namespace ConsoleAppPi
         private static void RunProcess(string youtubeLink)
         {
             ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.FileName = YOUTUBE_EXE;
+            processInfo.FileName = YOUTUBE;
             processInfo.Arguments = youtubeLink;
             processInfo.UseShellExecute = false;
             processInfo.CreateNoWindow = true;
